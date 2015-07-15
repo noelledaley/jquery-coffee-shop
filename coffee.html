@@ -47,45 +47,25 @@
 
 <script>
 
-    // var myImage = document.getElementById("coffee_image");
-    // var myRevenueMessage = document.getElementById("revenue");
+    var coffeeImage = $('#coffee_image')
 
-    // myImage.setAttribute('src', "static/coffee_beans.jpg");
+    coffeeImage.attr("src", "static/coffee_beans.jpg");
 
-    $('#coffee_image').attr("src", "static/coffee_beans.jpg");
-    console.log($('#coffee_image'))
+    var showMachine = function() {
+        coffeeImage.attr('src', 'static/coffee_machine.jpg');
+        setTimeout(showMug, 1000);
+    }
 
-    function makeCoffee() {
+    var showMug = function() {
+        coffeeImage.attr('src', 'static/coffee_mug.jpg');
+        setTimeout(showBeans, 1500);
+    }
 
-        $('#coffee_image').attr("src", "static/coffee_machine.jpg");
-         setTimeout(function() { 
-            $('#coffee_image').attr("src", "static/coffee_mug.jpg"); 
-        }, 500);
-         setTimeout(function() {
-          $('#coffee_image').attr("src", "static/coffee_beans.jpg"); }, 1500);
-    };
+    var showBeans = function () {
+        coffeeImage.attr('src', 'static/coffee_beans.jpg');
+    }
 
-    // Functions listed below are the long-form version of makeCoffee.
-    
-    // var showMachine = function() {
-    //     $('#coffee_image').attr('src', 'static/coffee_machine.jpg');
-    //     setTimeout(showMug, 1000);
-    // }
-
-    // var showMug = function() {
-    //     $('#coffee_image').attr('src', 'static/coffee_mug.jpg');
-    //     setTimeout(showBeans, 1500);
-    // }
-
-    // var showBeans = function () {
-    //     $('#coffee_image').attr('src', 'static/coffee_beans.jpg');
-    // }
-
-    // myImage.addEventListener('click', function () {
-    //     return makeCoffee("brew");
-    // });
-
-$('#coffee_image').on('click', makeCoffee);
+    coffeeImage.on('click', showMachine);
 
 </script>
 
