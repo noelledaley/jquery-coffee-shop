@@ -19,7 +19,7 @@ coffeeImage.attr("src", "static/coffee_beans.jpg");
 var showMachine = function(drinkType) {
     coffeeImage.attr('src', 'static/coffee_machine.jpg');
     drinksOrdered.push(drinkType);
-    myRevenueMessage.append(revenue());
+    myRevenueMessage.text(revenue());
     setTimeout(showMug, 1000);
 }
 
