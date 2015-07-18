@@ -13,9 +13,10 @@ var prices = {
   "hot chocolate": 2.50
 };
 
-// allow user to click image and brew coffee
+
 coffeeImage.attr("src", "static/coffee_beans.jpg");
 
+// allow user to click image and brew coffee
 var showMachine = function(drinkType) {
     coffeeImage.attr('src', 'static/coffee_machine.jpg');
     drinksOrdered.push(drinkType);
@@ -33,6 +34,7 @@ var showBeans = function () {
 }
 
 // collect drinks ordered and add to total
+
 // creates new functions that return the result of showMachine; and calls new functions on click
 espresso.on('click', function () {return showMachine('espresso')});
 hotChocolate.on('click', function () {return showMachine('hot chocolate')});
@@ -40,7 +42,6 @@ latte.on('click', function () {return showMachine('latte')});
 coffeeImage.on('click', function () {return showMachine('brew')});
 
 // for every item ordered, add item cost to item total
-
 var revenue = function () {
   var totalCost = 0;
   console.log("beginning cost: " + totalCost);
