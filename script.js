@@ -16,8 +16,9 @@ var prices = {
 // allow user to click image and brew coffee
 coffeeImage.attr("src", "static/coffee_beans.jpg");
 
-var showMachine = function() {
+var showMachine = function(drinkType) {
     coffeeImage.attr('src', 'static/coffee_machine.jpg');
+    drinksOrdered.push(drinkType);
     setTimeout(showMug, 1000);
 }
 
@@ -34,9 +35,12 @@ coffeeImage.on('click', showMachine);
 
 // collect drinks ordered via event handlerss
 
-espresso.on('click');
-hotChocolate.on('click');
-latte.on('click');
+// creates new functions that return the result of showMachine; and calls new functions on click
+espresso.on('click', function () {return showMachine('espresso')});
+hotChocolate.on('click', function () {return showMachine('hotChocolate')});
+latte.on('click', function () {return showMachine('latte')});
+
+// when they click, add
 
 
 // if user clicks espresso, add cost of espresso
